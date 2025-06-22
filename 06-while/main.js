@@ -55,12 +55,3 @@ let t = 10 +  Math.floor(Math.random() * (30-10) )// מגריל מספר
 
 
 
-//max number 
-let max = 0 
-for(let i=0;i<10;i++){
-    let number = Math.floor(Math.random() * 100)
-    if(number > max){
-        max = number
-    }
-}//end of for 
-console.log("max is : " + max)
