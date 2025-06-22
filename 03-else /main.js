@@ -10,3 +10,5 @@ else if (x1 == x2) {
     alert(x1 + " equal to  " + x2)
 }
 
+console.log("hi")
+
