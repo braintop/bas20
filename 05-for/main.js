@@ -44,7 +44,7 @@ let x = 30 +  Math.floor(Math.random() * (40) )// מגריל מספר
 
 min = 10
 max = 200
-let y = 30 +  Math.floor(Math.random() * (max-min) )// מגריל מספר
+let y = min +  Math.floor(Math.random() * (max-min) )// מגריל מספר
 
 
 //30 - 100    
