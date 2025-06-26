@@ -8,7 +8,7 @@ while (i < 20) {
     i++
 }
 //a = 97 , b= 98 .........z = 123 
-let randomChar = String.fromCharCode(97 + Math.floor(Math.random() * 6));
+let randomChar = String.fromCharCode(97 + Math.floor(Math.random() * 26));
 console.log(randomChar);
 //===========================
 i = 0
