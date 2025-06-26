@@ -1,5 +1,5 @@
-let arr = []
-let numbers = [1, 2, 33, 4, 50]
+let arr = [10]
+let numbers = [1, 2, 33, 4, 50,80,90]
 console.log(numbers)
 console.log(numbers[0])
 console.log(numbers[numbers.length - 1])
