@@ -11,7 +11,7 @@ function sumDigites(number) {
         sum += number % 10
         number = Math.floor(number / 10)
     }
-    return sum 
+    return sum
 }
 
 //  number | number %10 | sum | 
@@ -25,4 +25,9 @@ console.log(s1)//
 let y = +prompt("enter a number")
 let s2 = sumDigites(y)//2
 console.log(s2)//  
+
+
+let name1 = "oren"
+console.log(name1.length)
+console.log(name1[0])
 
