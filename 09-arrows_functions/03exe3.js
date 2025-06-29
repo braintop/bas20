@@ -2,6 +2,11 @@ function n1moden2(n1, n2) {
     let s = n1 % n2
     return s
 }
+let n1moden2v2 = (n1, n2) => {
+    let s = n1 % n2
+    return s
+}
+
 
 
 let num1 = 10

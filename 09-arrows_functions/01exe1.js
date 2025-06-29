@@ -7,7 +7,6 @@ function minInArray1(arr) {
     }//end of for 
     return min
 }
-
 let minInArray2 = (arr) => {
     let min = arr[0]
     for (let i = 0; i < arr.length; i++) {

@@ -7,6 +7,8 @@ function minInArray(arr) {
     }//end of for 
     return min
 }
+
+
 let numbers = [10, 5, 18, 300, 22]
 let m = minInArray(numbers)
 console.log("min is :" + m)

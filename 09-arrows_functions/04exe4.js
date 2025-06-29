@@ -20,6 +20,10 @@ function evenOrOdd3(n) {
 function evenOrOdd4(n) {
     return n1 % 2 == 0 // true of false 
 }
+let evenOrOdd5 = (n) => {
+    return n1 % 2 == 0 // true of false 
+}
+
 
 
 
