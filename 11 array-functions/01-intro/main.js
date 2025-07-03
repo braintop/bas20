@@ -25,3 +25,25 @@ console.log("first even:" + find)
 //7.find 
 let findIndex = arr.findIndex((item) => item % 2 == 0)//false  
 console.log("first even index:" + findIndex)
+
+let names = ["oren", "david", "or", "yahel"]
+console.log(names)
+let i = names.indexOf("david")//1 
+let j = names.indexOf("zipo")//-1
+if (i != -1) {
+    console.log("david exist in names on index :" + i)
+}
+else if (i == -1) {
+    console.log("zipo not exist in names on index:" + j)
+}
+
+if (j != -1) {
+    console.log("zipo exist in names on index:" + j)
+}
+else if (j == -1) {
+    console.log("zipo not exist in names on index:" + j)
+}
+
+
+let x1 = names.findIndex((item)=> item=="david")
+let x2 = names.indexOf("david");
