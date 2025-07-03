@@ -29,24 +29,11 @@ let persons = [
 for (let i = 0; i < persons.length; i++) {
     console.log(persons[i])
 }
-for (let i = 0; i < persons.length; i++) {
-    console.log(persons[i].firstname)
+//i מאותחל אוטומטית ל 0 וגדל ב 1 בכל איטריציה 
+for (let index in persons) {
+    console.log(persons[index])
 }
-let max = persons[0].age;//reference 
-for (let i = 0; i < persons.length; i++) {
-    if (persons[i].age > max) {
-        max = persons[i].age
-    }
-}//end of for 
-//יש לי ביד רק את הערך של הגיל המקסימאלי 
-console.log(max)// 18 
 
-let personsMax = persons[0];//reference 
-for (let i = 0; i < persons.length; i++) {
-    if (persons[i].age > personsMax.age) {
-        personsMax = persons[i]
-    }
-}//end of for 
-
-console.log(personsMax)// יש לנו את כל פרטי האדם 
-console.log(personsMax.age)
+for (let person of persons) {
+    console.log(person)
+}
