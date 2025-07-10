@@ -13,7 +13,13 @@ let items = [
         "id": 3,
         "title": "fugiat veniam minus",
         "completed": false
+    },
+    {
+        "id": 4,
+        "title": "Hamburger",
+        "completed": true
     }
+
 ]
 
 console.log(items[0])
