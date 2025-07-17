@@ -27,3 +27,8 @@ console.log(items[0].title)
 console.log(items[2].id)
 items.splice(2, 1)
 console.log(items)
+for (let i = 0; i < items.length; i++) {
+    console.log(items[i].title)
+    console.log(items[i]["title"])
+
+}

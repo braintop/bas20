@@ -7,7 +7,8 @@ app.get("/", (req, res) => {
 })
 app.get("/plus", function (req, res) {
     counter++
-    res.status(200).send("" + counter)
+    console.log(counter)
+    res.status(200).send("avi:" + counter)
 })
 app.get("/minus", function (req, res) {
     counter--

@@ -1,5 +1,4 @@
 // תזכורת למערכים 
-console.log("hello world");
 let arr = ["uri", "oren", "uzi", "eli", "maor", "yola"]
 arr.push("zahava")
 
