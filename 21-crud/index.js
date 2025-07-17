@@ -4,22 +4,9 @@ let express = require("express")
 //.       post.   get.    put.    delete 
 
 let items = [
-    {
-        "id": 10,
-        "title": "ball",
-        "completed": false
-    },
-    {
-        "id": 11,
-        "title": "tshirt",
-        "completed": true
-    },
-    {
-        "id": 13,
-        "title": "Mezuza",
-        "completed": false
-    }
+    
 ]
+
 let app = express()
 app.use(express.json())// access to req.body 
 app.get("/", function (req, res) {
