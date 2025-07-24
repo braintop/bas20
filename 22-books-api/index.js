@@ -3,11 +3,35 @@ let app = express()
 app.use(express.json())
 
 let books = [
-
-
-
+    {
+        "title": "zamar1",
+        "author": "ffff",
+        "year": 100,
+        "available": true,
+        "id": 0
+    },
+    {
+        "title": "zamar2",
+        "author": "ffff",
+        "year": 100,
+        "available": false,
+        "id": 1
+    },
+    {
+        "title": "zamar3",
+        "author": "ffff",
+        "year": 1986,
+        "available": true,
+        "id": 2
+    },
+    {
+        "title": "zamar4",
+        "author": "ffff",
+        "year": 2025,
+        "available": true,
+        "id": 3
+    }
 ]
-
 app.get("/books", function (req, res) {
     res.status(200).json(books)
 })
@@ -76,9 +100,10 @@ app.put("/", function (req, res) {
 })
 app.get("/books/count/year-range", function (req, res) {
     // נשלוף את הפרמטרים מה-query string ונמיר למספרים
+    console.log(req.query)
     let from = +req.query.from;
     let to = +req.query.to;
-
+    console.log(from)
     // בדיקת תקינות קלט
     if (isNaN(from) || isNaN(to)) {
         res.status(400).json({ message: "Invalid year range parameters" });
@@ -96,8 +121,39 @@ app.get("/books/count/year-range", function (req, res) {
     res.status(200).json({ count: count });//{count:2}
 });
 
+app.get("/api/books/available", function (req, res) {
+    // let newArr = []
+    // for (let i = 0; i < books.length; i++) {
+    //     if (books[i].available) {
+    //         newArr.push(books[i])
+    //     }
+    // }
+    let newArr = books.filter((item) => item.available === true)
+    res.status(200).json(newArr);
+})
+app.get("/books/count/available", function (req, res) {
+    let newArr = books.filter((item) => item.available === true)
+    res.status(200).json({
+        available: newArr.length,
+        unavailable: books.length - newArr.length
+    })
+})
 
 
+app.get("/books/year/:year", function (req, res) {
+    let newArr = books.filter((item) => item.year === req.params.year)
+    if (newArr.length === 0) {
+        res.status(404).json({ message: "no books found for this year" });
+        return;
+    }
+    res.status(200).json(newArr)
+})
+
+app.delete("/books/before/:year", function (req, res) {
+    books = books.filter((item) => item.year > +req.params.year)
+    res.status(200).json(books)
+
+})
 
 app.listen(3000)
 
