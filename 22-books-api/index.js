@@ -2,7 +2,11 @@ let express = require("express")
 let app = express()
 app.use(express.json())
 
-let books = []
+let books = [
+
+
+
+]
 
 app.get("/books", function (req, res) {
     res.status(200).json(books)
@@ -70,6 +74,29 @@ app.put("/", function (req, res) {
     res.status(200).json(books)
 
 })
+app.get("/books/count/year-range", function (req, res) {
+    // נשלוף את הפרמטרים מה-query string ונמיר למספרים
+    let from = +req.query.from;
+    let to = +req.query.to;
+
+    // בדיקת תקינות קלט
+    if (isNaN(from) || isNaN(to)) {
+        res.status(400).json({ message: "Invalid year range parameters" });
+        return;
+    }
+
+    // סופרים את הספרים בטווח השנים כולל
+    let count = 0;
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].year >= from && books[i].year <= to) {
+            count++;
+        }
+    }
+
+    res.status(200).json({ count: count });//{count:2}
+});
+
+
 
 
 app.listen(3000)

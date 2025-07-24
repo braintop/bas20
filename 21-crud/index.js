@@ -1,10 +1,10 @@
 let express = require("express")
 //.       items.  get.   get/:id.   
-//crud - create, read ,get by id,  update , delete 
+//crud - create, read - get by id,  update , delete 
 //.       post.   get.    put.    delete 
 
 let items = [
-    
+
 ]
 
 let app = express()
@@ -32,8 +32,14 @@ app.post("/", function (req, res) {
     //console.log(req.body)
     //1. add id 
     //2. add to db 
-    let id = items[items.length - 1].id;
-    id++;
+    let id = -1;
+    if (items.length == 0) {
+        id = 1
+    }
+    else {
+        id = items[items.length - 1].id;
+        id++;
+    }
     let item = {
         id: id,
         title: req.body.title,
@@ -41,6 +47,7 @@ app.post("/", function (req, res) {
     }
     items.push(item)
     res.status(200).json(items)
+
 })
 
 app.delete("/:id", function (req, res) {
