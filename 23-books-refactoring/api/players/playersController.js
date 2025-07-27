@@ -12,3 +12,6 @@
         "age": 37,
         "Team": "Lakers"
     }]
+//add get , post , delete update function to controller 
+//add router file
+//add to index referancr to routing file and test the server 
