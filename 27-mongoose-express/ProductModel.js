@@ -1,10 +1,4 @@
 var mongoose = require("mongoose");
-let express = require('express');
-let app = express();
-app.use(express.json())
-var CurrentProduct = require('./ProductModel');
-var mongoose = require('mongoose');
-
 var ProductSchema = new mongoose.Schema({
     title: {
         type: String,
