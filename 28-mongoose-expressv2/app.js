@@ -43,6 +43,16 @@ app.get('/products', async function(req, res) {
     res.status(500).json({ error: err.message });
   }
 })
+app.get('/products/minPrice/:min', async function(req, res) {
+  try{
+    let products = await ProductModel.find().minPrice(req.params.min)
+    .select('title price');;
+    res.json(products);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+})
+
 app.get('/products/:id', async function(req, res) {
   try{
     let product = await ProductModel.findById(req.params.id);
@@ -69,7 +79,6 @@ app.put('/products/:id', async function(req, res) {
     res.status(500).json({ error: err.message });
   }
 })
-
 let port = 3000;
 app.listen(port, function () {
   console.log("Running on port " + port);
