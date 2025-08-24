@@ -37,7 +37,6 @@ exports.create= async function  (req, res) {
     }
 }
   
-  
   exports.get = async function (req, res) {
     const movies = await Movie.find();
     res.json(movies);
@@ -73,8 +72,7 @@ exports.create= async function  (req, res) {
     }
   };
   
-  
-  
+
   exports.update =  async (req, res) => {
     const id = req.params.id;
     const { title, director, price, isShowing } = req.body;
@@ -82,10 +80,10 @@ exports.create= async function  (req, res) {
     res.json(updatedMovie);
   };
   
-  
   exports.delete =  async (req, res) => {
     const id = req.params.id;
     const deletedMovie = await Movie.findByIdAndDelete(id);
     res.json(deletedMovie);
   };
-  
+
+

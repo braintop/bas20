@@ -21,12 +21,13 @@ const movieSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
     default: false
-  }
+  },
 }, {
   timestamps: true // מוסיף שדות createdAt ו-updatedAt אוטומטית
 });
 
 // יצירת מודל מהסכמה
-const Movie = mongoose.model('Movie', movieSchema);
+//const Movie = mongoose.model('Movie', movieSchema);
+const Movie = mongoose.model('Movie', movieSchema, 'movies');
 
 module.exports = Movie;
