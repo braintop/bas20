@@ -38,6 +38,7 @@ exports.create= async function  (req, res) {
 }
   
   exports.get = async function (req, res) {
+    console.log(req.user);
     const movies = await Movie.find();
     res.json(movies);
   }

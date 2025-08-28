@@ -1,5 +1,6 @@
 const User = require('./UserModel');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 exports.register = async function (req, res) {
     try {
@@ -96,7 +97,20 @@ exports.login = async function (req, res) {
             });
         }
         
-        // אם הכל תקין, מחזירים את פרטי המשתמש (ללא סיסמה)
+        // יצירת JWT token
+        const jwtSecret = process.env.JWT_SECRET || 'secret-key-change-in-production';
+        const token = jwt.sign(
+            { 
+                userId: user._id,
+                email: user.email 
+            },
+            jwtSecret,
+            { 
+                expiresIn: '24h' // התוקף של הטוקן - 24 שעות
+            }
+        );
+        
+        // אם הכל תקין, מחזירים את פרטי המשתמש (ללא סיסמה) ואת הטוקן
         const userResponse = {
             _id: user._id,
             firstname: user.firstname,
@@ -109,7 +123,8 @@ exports.login = async function (req, res) {
         
         res.status(200).json({
             "message": "התחברות הצליחה",
-            "user": userResponse
+            "user": userResponse,
+            "token": token
         });
         
     } catch (error) {

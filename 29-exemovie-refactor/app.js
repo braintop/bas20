@@ -1,8 +1,9 @@
 
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 // Middleware לטיפול ב-JSON
 app.use(express.json());
 // חיבור למסד הנתונים MongoDB Atlas
