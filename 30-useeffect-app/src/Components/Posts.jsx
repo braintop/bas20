@@ -4,9 +4,9 @@ export default function Posts() {
     const [counter, setCounter] = useState(0)
     const [posts, setPosts] = useState([])
     async function fetchPosts() {
-        let data = await fetch('https://jsonplaceholder.typicode.com/posts')
-        let posts = await data.json()
-        setPosts(posts)
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+        let data = await response.json()
+        setPosts(data)
     }
     useEffect(() => {
         fetchPosts()
