@@ -11,7 +11,7 @@ function App() {
   const [counter, setCounter] = useState(0)
   return (
     <>
-      <CounterContext.Provider value={{counter}}>
+      <CounterContext.Provider value={{counter, setCounter}}>
         <A />
         <B />
         <C />
